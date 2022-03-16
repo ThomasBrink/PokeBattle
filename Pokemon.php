@@ -4,19 +4,19 @@
 		public $energytype;
 		public $hitpoints;
 		public $startheatlh;
-		public $attack;
-		public $weakness;
-		public $resistance;
+		public $attacks;
 
-		public function __construct($name, $energytype, $hitpoints, $startheatlh, $attack, $weakness, $resistance)
+		public function __construct($name, $energytype, $hitpoints, $startheatlh)
     	{
         	$this->name = $name;
         	$this->energytype = $energytype;
         	$this->hitpoints = $hitpoints;
         	$this->startheatlh = $startheatlh;
-        	$this->attack = $attack;
-        	$this->weakness = $weakness;
-        	$this->resistance = $resistance;
+        	$this->attacks = [];
+    	}
+
+    	public function displayName(){
+    		echo '<h2>' . $this->name . '</h2>';
     	}
 
     	public function __toString() {

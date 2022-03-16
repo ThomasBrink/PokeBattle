@@ -1,6 +1,19 @@
 <?php
 	require 'Pokemon.php';
 
-	$Pikachu = new Pokemon('GeleRat', 'Lightning', '60', '60', '2', 'Fire', 'Fighting');
+	require 'Pikachu.php';
 
-	print_r('<pre>'. $Pikachu . '</pre>');
+	require 'Charmeleon.php';
+
+	$geleRat = new Pikachu("geleRat", "lighting", "60", "60");
+
+	$rodeRat = new Charmeleon("rodeRat", "fire", "120", "120");
+
+	print_r('<pre>'. $geleRat . '</pre>');
+
+	print_r('<pre>'. $rodeRat . '</pre>');
+
+	$geleRat->displayName();
+
+	$rodeRat->displayName();
+
