@@ -5,15 +5,28 @@
 
 	require 'Charmeleon.php';
 
-	$geleRat = new Pikachu("geleRat", "lighting", "60", "60");
+	require 'Attack.php';
 
-	$rodeRat = new Charmeleon("rodeRat", "fire", "120", "120");
+	require 'Resistance.php';
+
+	require 'Weakness.php';
+
+	$geleRat = new Pikachu("geleRat", 60, 60);
+
+	$rodeRat = new Charmeleon("rodeRat", 120, 120);
 
 	print_r('<pre>'. $geleRat . '</pre>');
 
 	print_r('<pre>'. $rodeRat . '</pre>');
 
-	$geleRat->displayName();
+	$geleRat->Attack($rodeRat);
 
-	$rodeRat->displayName();
+	echo "<br>";
+	for($i = 0; $i<4; $i++){
+		$rodeRat->Attack($geleRat);
+	}
+
+	//$geleRat->displayName();
+
+	//$rodeRat->displayName();
 
