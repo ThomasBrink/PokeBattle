@@ -13,20 +13,24 @@
 
 	$geleRat = new Pikachu("geleRat", 60, 60);
 
-	$rodeRat = new Charmeleon("rodeRat", 120, 120);
+	$rodeRat = new Charmeleon("rodeRat", 60, 60);
 
-	print_r('<pre>'. $geleRat . '</pre>');
+	//print_r('<pre>'. $geleRat . '</pre>');
 
-	print_r('<pre>'. $rodeRat . '</pre>');
+	//print_r('<pre>'. $rodeRat . '</pre>');
 
-	$geleRat->Attack($rodeRat);
+	for($i = 0; $i<2; $i++){//do while van maken
+		if($rodeRat->getStatus() == "fainted" || $geleRat->getStatus() == "fainted"){
+			break;
+		}
+		else{
+			$geleRat->Attack($rodeRat);
 
-	echo "<br>";
-	for($i = 0; $i<4; $i++){
-		$rodeRat->Attack($geleRat);
+			if($rodeRat->getStatus() != "fainted"){
+				$rodeRat->Attack($geleRat);
+			}
+
+			$i = 0;
+		}
 	}
-
-	//$geleRat->displayName();
-
-	//$rodeRat->displayName();
 
