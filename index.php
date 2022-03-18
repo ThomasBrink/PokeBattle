@@ -19,7 +19,7 @@
 
 	//print_r('<pre>'. $rodeRat . '</pre>');
 
-	for($i = 0; $i<2; $i++){//do while van maken
+	for($i = 0; $i<2; $i++){
 		if($rodeRat->getStatus() == "fainted" || $geleRat->getStatus() == "fainted"){
 			break;
 		}
