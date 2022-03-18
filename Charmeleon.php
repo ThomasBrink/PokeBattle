@@ -1,9 +1,9 @@
 <?php
 	class Charmeleon extends Pokemon{
-		public function __construct($name, $hitpoints, $startheatlh){
+		public function __construct($name, $startheatlh){
 			$energytype = "Fire";
 			
-			parent::__construct($name, $energytype, $hitpoints, $startheatlh);
+			parent::__construct($name, $energytype, $startheatlh, $startheatlh);
 
 			$this->attacks[] = new Attack("Head Butt", 10);
 			$this->attacks[] = new Attack("Flare", 30);

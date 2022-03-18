@@ -11,23 +11,23 @@
 
 	require 'Weakness.php';
 
-	$geleRat = new Pikachu("geleRat", 60, 60);
+	$pikachu = new Pikachu("Pikachu", 60);
 
-	$rodeRat = new Charmeleon("rodeRat", 60, 60);
+	$charmeleon = new Charmeleon("Charmeleon", 60);
 
 	//print_r('<pre>'. $geleRat . '</pre>');
 
 	//print_r('<pre>'. $rodeRat . '</pre>');
 
 	for($i = 0; $i<2; $i++){
-		if($rodeRat->getStatus() == "fainted" || $geleRat->getStatus() == "fainted"){
+		if($charmeleon->getStatus() == "fainted" || $pikachu->getStatus() == "fainted"){
 			break;
 		}
 		else{
-			$geleRat->Attack($rodeRat);
+			$pikachu->Attack($charmeleon);
 
-			if($rodeRat->getStatus() != "fainted"){
-				$rodeRat->Attack($geleRat);
+			if($charmeleon->getStatus() != "fainted"){
+				$charmeleon->Attack($pikachu);
 			}
 
 			$i = 0;
