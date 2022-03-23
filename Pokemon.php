@@ -1,13 +1,14 @@
 <?php
 	class Pokemon {
-		public $name;
-		public $energytype;
-		public $hitpoints;
-		public $startheatlh;
-		public $attacks;
-		public $resistance;
-		public $weakness;
-		public $status;
+		protected $name;
+		protected $energytype;
+		protected $hitpoints;
+		protected $startheatlh;
+		protected $attacks;
+		protected $resistance;
+		protected $weakness;
+		protected $status;
+		protected static $population = 0;
 
 		public function __construct($name, $energytype, $hitpoints, $startheatlh)
     	{
@@ -17,6 +18,7 @@
         	$this->startheatlh = $startheatlh;
         	$this->status = "alive";
         	$this->attacks = [];
+        	self::$population++;
     	}
 
     	public function getName(){
@@ -29,6 +31,10 @@
 
     	public function getStatus(){
     		return $this->status;
+    	}
+
+    	public function getPopulation(){
+    		return Pokemon::$population;
     	}
 
     	public function Attack($enemy){
@@ -57,6 +63,7 @@
 			if($enemy->hitpoints <= 0){
 				echo $enemy->getName() . " fainted";
 				$enemy->status = "fainted";
+				Pokemon::$population--;
 			}
 			else{
 				echo $enemy->hitpoints . " heatlh left"; 

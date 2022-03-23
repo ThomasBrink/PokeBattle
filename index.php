@@ -15,6 +15,8 @@
 
 	$charmeleon = new Charmeleon("Charmeleon", 60);
 
+	echo $charmeleon->getPopulation() . " pokemons alive <br>";
+
 	//print_r('<pre>'. $geleRat . '</pre>');
 
 	//print_r('<pre>'. $rodeRat . '</pre>');
@@ -33,4 +35,6 @@
 			$i = 0;
 		}
 	}
+
+	echo "<br>" . $charmeleon->getPopulation() . " pokemons alive";	
 
