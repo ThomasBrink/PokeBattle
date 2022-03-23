@@ -16,7 +16,7 @@
 	$charmeleon = new Charmeleon("Charmeleon", 60);
 
 	echo $charmeleon->getPopulation() . " pokemons alive <br>";
-
+	
 	do{
 		$pikachu->Attack($charmeleon);
 

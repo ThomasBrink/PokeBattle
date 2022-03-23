@@ -47,20 +47,26 @@
 			echo $this->name . " attacks " . $enemy->getName(). " with " . $this->attacks[$random]->getAttackName() . " (base dmg: " . $this->attacks[$random]->getAttackDamage() . ")";
 
 			echo "<br>";
+			echo "Damage done: ";
 
 			if($this->energytype == $enemy->weakness->getWeakEnergy()){
 				$enemy->hitpoints = $enemy->hitpoints - ($this->attacks[$random]->getAttackDamage() * $enemy->weakness->getWeakMulti());
+				echo   ($this->attacks[$random]->getAttackDamage() * $enemy->weakness->getWeakMulti()); 
 			}
 			else if($this->energytype == $enemy->resistance->getResEnergy()){
 				$enemy->hitpoints = $enemy->hitpoints - ($this->attacks[$random]->getAttackDamage() - $enemy->resistance->getResValue());
+				echo ($this->attacks[$random]->getAttackDamage() - $enemy->resistance->getResValue());
 			}
 			else{
 				$enemy->hitpoints = $enemy->hitpoints - $this->attacks[$random]->getAttackDamage();
+				echo $this->attacks[$random]->getAttackDamage();
 			}
+
+			echo "<br>";
+			echo "<br>";
 
 			if($enemy->hitpoints <= 0){
 				echo $enemy->getName() . " fainted";
-				$enemy->status = "fainted";
 				Pokemon::$population--;
 			}
 			else{
