@@ -48,11 +48,11 @@
 
 			echo "<br>";
 
-			if($this->energytype == $enemy->weakness->weakEnergy){
-				$enemy->hitpoints = $enemy->hitpoints - ($this->attacks[$random]->getAttackDamage() * $enemy->weakness->weakMulti);
+			if($this->energytype == $enemy->weakness->getWeakEnergy()){
+				$enemy->hitpoints = $enemy->hitpoints - ($this->attacks[$random]->getAttackDamage() * $enemy->weakness->getWeakMulti());
 			}
-			else if($this->energytype == $enemy->resistance->resEnergy){
-				$enemy->hitpoints = $enemy->hitpoints - ($this->attacks[$random]->getAttackDamage() - $enemy->resistance->resValue);
+			else if($this->energytype == $enemy->resistance->getResEnergy()){
+				$enemy->hitpoints = $enemy->hitpoints - ($this->attacks[$random]->getAttackDamage() - $enemy->resistance->getResValue());
 			}
 			else{
 				$enemy->hitpoints = $enemy->hitpoints - $this->attacks[$random]->getAttackDamage();
