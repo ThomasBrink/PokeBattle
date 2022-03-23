@@ -17,24 +17,14 @@
 
 	echo $charmeleon->getPopulation() . " pokemons alive <br>";
 
-	//print_r('<pre>'. $geleRat . '</pre>');
+	do{
+		$pikachu->Attack($charmeleon);
 
-	//print_r('<pre>'. $rodeRat . '</pre>');
-
-	for($i = 0; $i<2; $i++){
-		if($charmeleon->getStatus() == "fainted" || $pikachu->getStatus() == "fainted"){
-			break;
-		}
-		else{
-			$pikachu->Attack($charmeleon);
-
-			if($charmeleon->getStatus() != "fainted"){
-				$charmeleon->Attack($pikachu);
-			}
-
-			$i = 0;
+		if($charmeleon->getHealth() > 0){
+			$charmeleon->Attack($pikachu);
 		}
 	}
+	while(($charmeleon->getHealth() > 0) && ($pikachu->getHealth() > 0));
 
 	echo "<br>" . $charmeleon->getPopulation() . " pokemons alive";	
 

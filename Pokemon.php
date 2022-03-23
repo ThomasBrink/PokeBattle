@@ -33,6 +33,10 @@
     		return $this->status;
     	}
 
+    	public function getHealth(){
+    		return $this->hitpoints;
+    	}
+
     	public function getPopulation(){
     		return Pokemon::$population;
     	}
