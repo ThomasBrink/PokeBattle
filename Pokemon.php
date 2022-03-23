@@ -7,7 +7,6 @@
 		protected $attacks;
 		protected $resistance;
 		protected $weakness;
-		protected $status;
 		protected static $population = 0;
 
 		public function __construct($name, $energytype, $hitpoints, $startheatlh)
@@ -16,7 +15,6 @@
         	$this->energytype = $energytype;
         	$this->hitpoints = $hitpoints;
         	$this->startheatlh = $startheatlh;
-        	$this->status = "alive";
         	$this->attacks = [];
         	self::$population++;
     	}
@@ -27,10 +25,6 @@
 
     	public function getEnergyType(){
     		return $this->energytype;
-    	}
-
-    	public function getStatus(){
-    		return $this->status;
     	}
 
     	public function getHealth(){
