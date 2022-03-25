@@ -70,7 +70,7 @@
 				Pokemon::$population--;
 			}
 			else{
-				echo $enemy->hitpoints . " heatlh left"; 
+				echo $enemy->getName() . " has " . $enemy->hitpoints . " heatlh left"; 
 			}
 			echo "<br>";
     	}
