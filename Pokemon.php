@@ -1,13 +1,13 @@
 <?php
 	class Pokemon {
-		protected $name;
-		protected $energytype;
-		protected $hitpoints;
-		protected $startheatlh;
+		private $name;
+		private $energytype;
+		private $hitpoints;
+		private $startheatlh;
 		protected $attacks;
 		protected $resistance;
 		protected $weakness;
-		protected static $population = 0;
+		private static $population = 0;
 
 		public function __construct($name, $energytype, $hitpoints, $startheatlh)
     	{

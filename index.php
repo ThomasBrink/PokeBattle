@@ -26,5 +26,4 @@
 	}
 	while(($charmeleon->getHealth() > 0) && ($pikachu->getHealth() > 0));
 
-	echo "<br>" . $charmeleon->getPopulation() . " pokemons alive";	
-
+	echo "<br>" . $charmeleon->getPopulation() . " pokemons alive";
