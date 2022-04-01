@@ -49,18 +49,7 @@
 			echo "<br>";
 			echo "Damage done: ";
 
-			if($this->energytype == $enemy->weakness->getWeakEnergy()){
-				$enemy->hitpoints = $enemy->hitpoints - ($this->attacks[$random]->getAttackDamage() * $enemy->weakness->getWeakMulti());
-				echo   ($this->attacks[$random]->getAttackDamage() * $enemy->weakness->getWeakMulti()); 
-			}
-			else if($this->energytype == $enemy->resistance->getResEnergy()){
-				$enemy->hitpoints = $enemy->hitpoints - ($this->attacks[$random]->getAttackDamage() - $enemy->resistance->getResValue());
-				echo ($this->attacks[$random]->getAttackDamage() - $enemy->resistance->getResValue());
-			}
-			else{
-				$enemy->hitpoints = $enemy->hitpoints - $this->attacks[$random]->getAttackDamage();
-				echo $this->attacks[$random]->getAttackDamage();
-			}
+			$this->setEnemyHp($enemy, $random);
 
 			echo "<br>";
 			echo "<br>";
@@ -73,6 +62,21 @@
 				echo $enemy->getName() . " has " . $enemy->hitpoints . " heatlh left"; 
 			}
 			echo "<br>";
+    	}
+
+    	public function setEnemyHp($enemy, $random){
+    		if($this->energytype == $enemy->weakness->getWeakEnergy()){
+				$enemy->hitpoints = $enemy->hitpoints - ($this->attacks[$random]->getAttackDamage() * $enemy->weakness->getWeakMulti());
+				echo   ($this->attacks[$random]->getAttackDamage() * $enemy->weakness->getWeakMulti()); 
+			}
+			else if($this->energytype == $enemy->resistance->getResEnergy()){
+				$enemy->hitpoints = $enemy->hitpoints - ($this->attacks[$random]->getAttackDamage() - $enemy->resistance->getResValue());
+				echo ($this->attacks[$random]->getAttackDamage() - $enemy->resistance->getResValue());
+			}
+			else{
+				$enemy->hitpoints = $enemy->hitpoints - $this->attacks[$random]->getAttackDamage();
+				echo $this->attacks[$random]->getAttackDamage();
+			}
     	}
 
     	public function __toString() {
